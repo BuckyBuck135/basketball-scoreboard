@@ -36,7 +36,6 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   border-radius: 5px;
   width: 900px;
   height: 450px;
@@ -48,10 +47,25 @@ div.splash h1 {
     font-family: 'Pattaya', sans-serif;
 }
 form {
-    margin: 30px;
+    margin: 20px;
 }
+
 form label {
     line-height: 40px;
+    font-size: 120%;
+}
+
+form input {
+  background-color: var(--light-orange);
+  color: var(--dark-blue);
+  border: none;
+  text-align: center;
+  padding: 5px;
+}
+
+::placeholder {
+  color: whitesmoke;
+  font-style: italic;
 }
 
 .container {
@@ -112,11 +126,16 @@ button {
   color: var(--grey);
 }
 
+button:hover {
+  background-color: var(--light-orange);
+}
+
 #submit-btn{
   min-width: 150px;  
   font-family: 'Pattaya', sans-serif;
   font-size: 1.5em;
-
+  color: whitesmoke;
+  margin-top: 30px;
 }
 
 #reset {
