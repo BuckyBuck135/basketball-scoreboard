@@ -5,7 +5,7 @@ let countGuest = 0;
 
 const splashDiv = document.querySelector(".splash");
 const containerDiv = document.querySelector(".container")
-const submitBtnEl = document.getElementById("submit-btn")
+const form = document.querySelector("form")
 
 const nameInputHome = document.getElementById("entername-home");
 const nameInputGuest = document.getElementById("entername-guest");
@@ -13,30 +13,19 @@ const nameInputGuest = document.getElementById("entername-guest");
 const nameDisplayHome = document.getElementById("name-display-home")
 const nameDisplayGuest = document.getElementById("name-display-guest")
 
-//hides the main container by default//
+//Hides the main container by default//
 containerDiv.style.visibility = 'hidden';
 
-// --- Submit names on click function below --- //
-//HTML onclick version//
-//Hides the splash, reveals the main container, computes team names//
-// function submitNames() {
-// splashDiv.style.display = 'none';
-// containerDiv.style.visibility = 'visible';
-// nameDisplayHome.textContent = nameInputHome.value;
-// nameDisplayGuest.textContent = nameInputGuest.value;
-// }
+//Submit names on click //
+form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        splashDiv.style.display = 'none';
+        containerDiv.style.visibility = 'visible';
+        nameDisplayHome.textContent = nameInputHome.value;
+        nameDisplayGuest.textContent = nameInputGuest.value;
+        })
 
-//JS eventListener version//
-//Hides the splash, reveals the main container, computes team names//
-submitBtnEl.addEventListener("click", function() {
-    splashDiv.style.display = 'none';
-    containerDiv.style.visibility = 'visible';
-    nameDisplayHome.textContent = nameInputHome.value;
-    nameDisplayGuest.textContent = nameInputGuest.value;
-    })
-// --- End of function --- //
-
-// Shows a different cheer message accordiing to score //
+// Shows a different cheer message according to score //
 const cheeringEl = document.getElementById("cheering")
 function showCheerMessage() {
     if (countHome > countGuest) {
@@ -73,9 +62,12 @@ function reset() {
     scoreHomeEl.textContent=countHome;
     scorePulseEffect()
     showCheerMessage()
-
-
 }
+
+function reload() {
+    location.reload();
+}
+
 // Conditional pulse CSS effct //
 function scorePulseEffect() {
     if (countGuest > countHome) {

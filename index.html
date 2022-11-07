@@ -1,33 +1,36 @@
+<!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">        
         <link rel="icon" type="image/x-icon" href="images/favicon.png">
+        <link rel="stylesheet" href="index.css">
         <title>Scoreboard</title>
-
     </head>
     <body>
         <div class="splash column">
-            <h1>Welcome to <br>Scrimba Arena</h1>
-            <div> <!-- to be styled with a "column" class for centering -->
-                <form>
-                    <label for="entername-home">Home team</label><br>
-                    <input id="entername-home" type="text" placeholder="Enter home team name" required>
-                </form>
-                <form>
-                    <label for="entername-guest">Guest team</label><br>
-                    <input id="entername-guest" type="text" placeholder="Enter guest team name" required>
-                </form>
-                <!-- <button class="submit-btn" onclick="submitNames()">Submit</button> -->
-                <button id="submit-btn">Submit</button>
-
-            </div>
+            <form>
+                <h1>Welcome to <br>Scrimba Arena</h1> 
+                <div class="form-wrapper">
+                    <div>
+                        <label for="entername-home">Home team</label>
+                        <input id="entername-home" type="text" placeholder="Enter home team name" required><br>
+                    </div>
+                    <div>
+                        <label for="entername-guest">Guest team</label>
+                        <input id="entername-guest" type="text" placeholder="Enter guest team name" required>
+                    </div>
+                </div>
+                <div><button id="submit-btn">Submit</button></div>
+            </form>
         </div>
+
         <div class="container">
             <div class="column">
-                <div ><h3 id="name-display-home">CONDORS</h3></div>
+                <div ><h3 id="name-display-home">HOME</h3></div>
                 <span id="score-home-el" class="score-display">0</span>
                 <div class="score-controls">
                     <button class="score-btn" onclick="incrementHome(1)">+1</button>
@@ -35,9 +38,12 @@
                     <button class="score-btn" onclick="incrementHome(3)">+3</button>
                 </div>
             </div>
-            <button id="reset" class="column" onclick="reset()">Reset Game</button>
+            <div>
+                <button id="reset" onclick="reset()">Reset Game</button>
+                <button id="reload" onclick="reload()">New Teams</button>
+            </div>
             <div class="column">
-                <div><h3 id="name-display-guest">RAVENS</h3></div>
+                <div><h3 id="name-display-guest">GUEST</h3></div>
                 <div id="score-guest-el" class="score-display">0</div>
                 <div class="score-controls">
                     <button class="score-btn" onclick="incrementGuest(1)">+1</button>
