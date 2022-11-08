@@ -42,6 +42,7 @@ body {
   background: whitesmoke;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   width: 70%;
+  max-width: 700px;
   height: 80%;
 }
 
@@ -72,6 +73,10 @@ input {
     text-align: center;
     padding: 10px;
     margin-top: 10px;
+}
+
+input, label {
+  font-size: 1.2em;
 }
 
 ::placeholder {
