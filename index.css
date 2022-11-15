@@ -91,6 +91,10 @@ input, label {
   color: whitesmoke;
 }
 
+  button:active {
+  	translate: 1px 1px;
+}
+
 /* ---- MAIN PAGE ---- */
 .container {
   margin: 100px auto;
