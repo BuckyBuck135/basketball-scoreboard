@@ -152,6 +152,11 @@ button {
 
 button:hover {
   background-color: var(--light-orange);
+  cursor: pointer;
+}
+
+  button:active {
+  	translate: 1px 1px;
 }
 
 #reset, #reload {
