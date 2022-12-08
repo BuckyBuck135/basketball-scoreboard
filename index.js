@@ -1,8 +1,9 @@
-let scoreHomeEl = document.getElementById("score-home-el");
-let scoreGuestEl = document.getElementById("score-guest-el");
+
 let countHome = 0;
 let countGuest = 0;
 
+const scoreHomeEl = document.getElementById("score-home-el");
+const scoreGuestEl = document.getElementById("score-guest-el"); 
 const splashDiv = document.querySelector(".splash");
 const containerDiv = document.querySelector(".container")
 const form = document.querySelector("form")
@@ -42,24 +43,26 @@ showCheerMessage()
 
 function incrementHome(points) {
     countHome += points;
-    scoreHomeEl.textContent=countHome;
+    render()
     showCheerMessage()
     scorePulseEffect()
 }
 
 function incrementGuest(points) {
     countGuest += points;
-    scoreGuestEl.textContent=countGuest;
+    render()
     showCheerMessage()
     scorePulseEffect()
 }
-//end of increment functions//
 
+function render() {
+    scoreHomeEl.textContent=countHome;
+    scoreGuestEl.textContent=countGuest;   
+}
 function reset() {
     countHome = 0;
     countGuest = 0;
-    scoreGuestEl.textContent=countGuest;
-    scoreHomeEl.textContent=countHome;
+    render()
     scorePulseEffect()
     showCheerMessage()
 }
