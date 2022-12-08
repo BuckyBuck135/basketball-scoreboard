@@ -14,10 +14,10 @@ const nameInputGuest = document.getElementById("entername-guest");
 const nameDisplayHome = document.getElementById("name-display-home")
 const nameDisplayGuest = document.getElementById("name-display-guest")
 
-//Hides the main container by default//
+// Hide the main container by default//
 containerDiv.style.visibility = 'hidden';
 
-//Submit names on click //
+// Submit names on click //
 form.addEventListener('submit', function(e) {
         e.preventDefault();
         splashDiv.style.display = 'none';
@@ -26,7 +26,7 @@ form.addEventListener('submit', function(e) {
         nameDisplayGuest.textContent = nameInputGuest.value;
         })
 
-// Shows a different cheer message according to score //
+// Show a different cheer message according to score //
 const cheeringEl = document.getElementById("cheering")
 function showCheerMessage() {
     if (countHome > countGuest) {
@@ -38,8 +38,6 @@ function showCheerMessage() {
     }
 }
 showCheerMessage()
-
-// Increment functions below//
 
 function incrementHome(points) {
     countHome += points;
@@ -59,6 +57,7 @@ function render() {
     scoreHomeEl.textContent=countHome;
     scoreGuestEl.textContent=countGuest;   
 }
+
 function reset() {
     countHome = 0;
     countGuest = 0;
